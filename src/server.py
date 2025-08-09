@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
+import logging
+import mylib
+logger = logging.getLogger(__name__)
 
+logging.basicConfig(filename='myapp.log', level=logging.INFO)
+logger.info('Started')
+    
 def add(a, b):
     return a+b
 
@@ -14,3 +20,4 @@ server.registerMethod(add)
 server.registerMethod(sub)
 
 server.run()
+logger.info('Finished')
